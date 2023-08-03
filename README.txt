@@ -11,6 +11,10 @@ kubectl get services
 minikube service --url miappkubectlkubectl delete -f ./
 # Orquestar servicio a servicio
 kubectl apply -f "nombrearchivo.yml"
+# K8sMicroservicios
+docker build -t billingapp-back:0.0.4 --no-cache --build-arg JAR_FILE=./*.jar .
+docker build -t billingapp-front:0.0.4 --no-cache .
+
 # Orquestar todos los servicios
 kubectl apply -f ./
 # Eliminar la orquestacion de la carpeta desde donde la ejecutamos
