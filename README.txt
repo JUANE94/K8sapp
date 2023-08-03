@@ -8,8 +8,10 @@ kubectl describe pod miapp
 kubectl expose pod miapp --type=LoadBalancer --port 8080 --target-port=80
 kubectl get services
 # Solicitar a minikube una url para el servicio
-minikube service --url miappkubectl
+minikube service --url miappkubectlkubectl delete -f ./
 # Orquestar servicio a servicio
 kubectl apply -f "nombrearchivo.yml"
+# Orquestar todos los servicios
+kubectl apply -f ./
 # Eliminar la orquestacion de la carpeta desde donde la ejecutamos
 kubectl delete -f ./
