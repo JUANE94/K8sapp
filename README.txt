@@ -17,6 +17,10 @@ minikube service --url
 # Solicitar ip para conectarnos a nuestros servicios.
 minikube ip
 
+Check minikube docker en
+minikube docker-env
+To point your shell to minikube's docker-daemon
+eval $(minikube -p minikube docker-env)
 # Orquestar servicio a servicio
 kubectl apply -f "nombrearchivo.yml"
 
