@@ -17,15 +17,17 @@ minikube service --url
 # Solicitar ip para conectarnos a nuestros servicios.
 minikube ip
 
-Check minikube docker en
+# Check minikube docker
 minikube docker-env
-To point your shell to minikube's docker-daemon
+
+# To point your shell to minikube's docker-daemon
 eval $(minikube -p minikube docker-env)
+
 # Orquestar servicio a servicio
 kubectl apply -f "nombrearchivo.yml"
 
 # K8sMicroservicios
-# Construis imagenes de nuestra aplicacion
+# Construir imagenes de nuestra aplicacion
 docker build -t billingapp-back:0.0.4 --no-cache --build-arg JAR_FILE=./*.jar .
 docker build -t billingapp-front:0.0.4 --no-cache .
 
